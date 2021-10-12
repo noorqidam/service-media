@@ -1,10 +1,8 @@
 "use strict";
 
-const { sequelize } = require("../models");
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable("media", {
+    await queryInterface.createTable("media", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -27,6 +25,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable("media");
+    await queryInterface.dropTable("media");
   },
 };
