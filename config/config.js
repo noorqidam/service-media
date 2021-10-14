@@ -34,7 +34,7 @@ module.exports = {
     protocol: "postgres",
     dialectOptions: {
       rejectUnauthorized: false,
+      ssl: true,
     },
-    ssl: true,
   },
 };
