@@ -8,7 +8,16 @@ const indexRouter = require("./routes/index");
 const mediaRouter = require("./routes/media");
 
 const app = express();
+const { Client } = require("pg");
 
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
+
+client.connect();
 app.use(logger("dev"));
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: false, limit: "50mb" }));
