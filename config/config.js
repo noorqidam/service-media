@@ -28,12 +28,12 @@ module.exports = {
     password: DB_PASSWORD,
     database: DB_NAME,
     host: DB_HOSTNAME,
-    use_env_variable: DATABASE_URL,
+    use_env_variable: process.env.DATABASE_URL,
     dialect: 'postgres',
     dialectOptions: {
       ssl: {
         require: true,
-        rejectUnauthorized: false, // <<<<<<< YOU NEED THIS TO FIX UNHANDLED REJECTION 
+        rejectUnauthorized: false,
       },
     },
   }
